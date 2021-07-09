@@ -54,6 +54,7 @@ location = {
 
 contact = {
     "name": {"type": "string"},
+    "pronouns": {"type": "string"},
     "job": {"type": "string"},
     "summary": {"required": False, "type": "string"},
     "date_of_birth": {"type": "string", "regex": DOB_REGEX},

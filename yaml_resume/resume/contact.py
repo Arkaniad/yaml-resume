@@ -63,6 +63,8 @@ class Contact(yaml.YAMLObject):
 
     :param name: The first, middle and last name.
     :type name: str
+    :param pronouns: Pronouns of choice
+    :type pronouns: srt
     :param date_of_birth: The date of birth.
     :type date_of_birth: str
     :param job: The current or researched position.
@@ -80,8 +82,9 @@ class Contact(yaml.YAMLObject):
 
     yaml_tag = u"Contact"
 
-    def __init__(self, name, date_of_birth, job, summary, email, phone, location):
+    def __init__(self, name, pronouns, date_of_birth, job, summary, email, phone, location):
         self.name = name
+        self.pronouns = pronouns
         self.date_of_birth = date_of_birth
         self.job = job
         self.summary = summary
@@ -98,6 +101,7 @@ class Contact(yaml.YAMLObject):
         correct = False
         while not correct:
             name = click.prompt("Full name")
+            pronouns = click.prompt("Chosen pronouns")
             date_of_birth = click.prompt("Date of birth (dd/mm/yyyy)")
             job = click.prompt("Job title")
             summary = click.prompt("Career summary (optional)", default="")
@@ -118,6 +122,7 @@ class Contact(yaml.YAMLObject):
         """
         return Contact(
             data.get("name"),
+            data.get("pronouns"),
             data.get("date_of_birth"),
             data.get("job"),
             data.get("summary"),

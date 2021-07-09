@@ -40,6 +40,18 @@ h1 {
     border-bottom: 1px solid #999;
 }
 
+h1 span {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    font-style: italic;
+    font-family: Georgia, Serif;
+    color: #999;
+    font-weight: normal;
+    float: left;
+    clear: left;
+}
+
 h2 {
     font-size: 14pt;
     margin: 0 0 6px 0;
